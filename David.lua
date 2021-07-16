@@ -9951,7 +9951,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, "↯︙تم اذاعة "..RioText.." بنجا�
 DevRio:del(David.."Rio:Send:Pv"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source David     --
-if text == "اذاعه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعه عام ↯" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "اذاعه عام" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevRio:get(David.."Rio:Send:Bot"..David) and not SecondSudo(msg) then 
 send(msg.chat_id_, msg.id_,"↯︙الاذاعه معطله من قبل المطور الاساسي")
 return false
@@ -10018,7 +10018,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, "↯︙تم اذاعة "..RioText.." بنجا�
 DevRio:del(David.."Rio:Send:Gp"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source David     --
-if text == "اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعه عام بالتوجيه ↯" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "اذاعه عام بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevRio:get(David.."Rio:Send:Bot"..David) and not SecondSudo(msg) then 
 send(msg.chat_id_, msg.id_,"↯︙الاذاعه معطله من قبل المطور الاساسي")
 return false
@@ -10871,7 +10871,7 @@ dofile('David.lua')
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n        ( تم تحديث ملفات البوت )        \n\27[0;34;49m\n") 
 Dev_Rio(msg.chat_id_, msg.id_, 1, "↯︙تم تحديث ملفات البوت", 1, "md")
-end 
+end
 if DevRio:get(David.."DevRio2") then
 DevRio:set(David.."Rio:ChId",DevRio:get(David.."DevRio2"))
 DevRio:del(David.."DevRio2")
@@ -10879,6 +10879,59 @@ end
 if DevRio:get(David.."Rio:textch:user") then
 DevRio:set(David.."Rio:ChText",DevRio:get(David.."Rio:textch:user"))
 DevRio:del(David.."Rio:textch:user")
+end
+--     Source David     --
+if text == 'نقل الاحصائيات' then
+local Users = DevRio:smembers(David.."User_Bot")
+local Groups = DevRio:smembers(David..'Chek:Groups')
+local Sudos = DevRio:smembers(David.."Sudo:User")
+if DevRio:get(David..'Name:Bot') then
+DevRio:set(David..'Rio:NameBot',(DevRio:get(David..'Name:Bot') or 'ديفد'))
+end
+for i = 1, #Users do
+local id = Users[i]
+if id:match("^(%d+)") then
+DevRio:sadd(David..'Rio:Users',Users[i]) 
+end
+end
+for i = 1, #Sudos do
+DevRio:sadd(David..'Rio:SudoBot:',Sudos[i]) 
+end
+for i = 1, #Groups do
+DevRio:sadd(David..'Rio:Groups',Groups[i]) 
+if DevRio:get(David.."Private:Group:Link"..Groups[i]) then
+DevRio:set(David.."Rio:Groups:Links"..Groups[i],DevRio:get(David.."Private:Group:Link"..Groups[i]))
+end
+if DevRio:get(David.."Get:Welcome:Group"..Groups[i]) then
+DevRio:set(David..'Rio:Groups:Welcomes'..Groups[i],DevRio:get(David.."Get:Welcome:Group"..Groups[i]))
+end
+local list2 = DevRio:smembers(David..'Constructor'..Groups[i])
+for k,v in pairs(list2) do
+DevRio:sadd(David.."Rio:Constructor:"..Groups[i], v)
+end
+local list3 = DevRio:smembers(David..'BasicConstructor'..Groups[i])
+for k,v in pairs(list3) do
+DevRio:sadd(David.."Rio:BasicConstructor:"..Groups[i], v)
+end
+local list4 = DevRio:smembers(David..'Manager'..Groups[i])
+for k,v in pairs(list4) do
+DevRio:sadd(David.."Rio:Managers:"..Groups[i], v)
+end
+local list5 = DevRio:smembers(David..'Mod:User'..Groups[i])
+for k,v in pairs(list5) do
+DevRio:sadd(David.."Rio:Admins:"..Groups[i], v)
+end
+local list6 = DevRio:smembers(David..'Special:User'..Groups[i])
+for k,v in pairs(list6) do
+DevRio:sadd(David.."Rio:VipMem:"..Groups[i], v)
+end
+DevRio:set(David.."Rio:Lock:Bots"..Groups[i],"del") DevRio:hset(David.."Rio:Spam:Group:User"..Groups[i] ,"Spam:User","keed") 
+LockList ={'Rio:Lock:Links','Rio:Lock:Forwards','Rio:Lock:Videos','Rio:Lock:Gifs','Rio:Lock:EditMsgs','Rio:Lock:Stickers','Rio:Lock:Farsi','Rio:Lock:Spam','Rio:Lock:WebLinks'}
+for i,Lock in pairs(LockList) do
+DevRio:set(David..Lock..Groups[i],true)
+end
+end
+send(msg.chat_id_, msg.id_,'↯︙تم نقل ↫ '..#Groups..' مجموعه\n↯︙تم نقل ↫ '..#Users..' مشترك\n↯︙من التحديث القديم الى التحديث الجديد')
 end
 --     Source David     --
 if text == 'الملفات' then
