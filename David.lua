@@ -7893,8 +7893,8 @@ DevRio:del(David..'Rio:Lock:Clean'..msg.chat_id_)
 end
 if text and (text:match("^تعين عدد المسح (%d+)$") or text:match("^تعيين عدد المسح (%d+)$") or text:match("^تعين عدد الحذف (%d+)$") or text:match("^تعيين عدد الحذف (%d+)$")) and Constructor(msg) then   
 local Num = text:match("تعين عدد المسح (%d+)$") or text:match("تعيين عدد المسح (%d+)$") or text:match("تعين عدد الحذف (%d+)$") or text:match("تعيين عدد الحذف (%d+)$")
-if tonumber(Num) < 50 or tonumber(Num) > 200 then
-Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙قم بتحديد عدد اكبر من 50 واصغر من 200 للحذف التلقائي', 1, 'md')
+if tonumber(Num) < 10 or tonumber(Num) > 1000 then
+Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙قم بتحديد عدد اكبر من 10 واصغر من 1000 للحذف التلقائي', 1, 'md')
 else
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙تم وضع ↫ *'..Num..'* من الميديا للحذف التلقائي', 1, 'md')
 DevRio:set(David..'Rio:CleanNum'..msg.chat_id_,Num) 
