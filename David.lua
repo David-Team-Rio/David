@@ -1562,7 +1562,7 @@ DevRio:del(David.."Comd:New:rt:Rio:"..ComdNew..msg.chat_id_)
 Dev_Rio(msg.chat_id_, msg.id_, 1, "↯︙تم حذف الصلاحيه", 1, 'html')
 end
 if DevRio:get(David.."Comd:New"..msg.chat_id_..msg.sender_user_id_) then 
-if text and text:match("^الغاء$") then 
+if text and text:match("^↫ الغاء ↯$") then 
 Dev_Rio(msg.chat_id_, msg.id_, 1, "↯︙تم الغاء الامر", 1, 'html')
 DevRio:del(David.."Comd:New"..msg.chat_id_..msg.sender_user_id_) 
 return false  
@@ -1721,12 +1721,12 @@ end
 end 
 --     Source David     --
 if ChatType == 'pv' then 
-if text == '/start' or text == 'رجوع' then 
+if text == '/start' or text == '↫ رجوع ↯' then 
 if SecondSudo(msg) then 
 local Sudo_Welcome = '↯︙مرحبا عزيزي المطور \n↯︙انت المطور الاساسي هنا \n↯︙اليك ازرار سورس ديفد \n↯︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ السورس ↯','وضع اسم البوت'},
-{'↫ المطورين ↯','↫ الاحصائيات ↯'},
+{'↫  المطورين ↯','↫ الاحصائيات ↯'},
 {'↫ التفعيل والتعطيل ↯','↫ الاذاعه ↯'},
 {'↫ تعيين كلايش الاوامر ↯','↫ العام ↯','↫ ردود الخاص ↯'},
 {'↫ المتجر ↯'},
@@ -1745,7 +1745,7 @@ local key = {
 {'تعيين امر م3','تعيين امر م2','تعيين امر م1'},
 {'تعيين امر م6','تعيين امر م5','تعيين امر م4'},
 {'استعادة كلايش الاوامر'},
-{'رجوع'},
+{'↫ رجوع ↯'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
@@ -1754,10 +1754,11 @@ if text == '↫ السورس ↯' then
 if SecondSudo(msg) then 
 local Sudo_Welcome = '↯︙اهلا بك مجددا عزيزي المطور \n↯︙اليك الازرار الخاصه بتحديث  سورس ديفد فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
-{'تحديث السورس','تحديث'},
-{'السيرفر'},
-{'السورس'},
-{'رجوع'},
+{'↫ تحديث السورس ↯','↫ تحديث ↯'},
+{'↫ السيرفر ↯'},
+{'↫ مبرمج السورس ↯','↫ قناة السورس ↯'},
+{'↫  السورس ↯'},
+{'↫ رجوع ↯'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
@@ -1766,25 +1767,25 @@ if text == '↫ الاحصائيات ↯' then
 if SecondSudo(msg) then 
 local Sudo_Welcome = '↯︙اهلا بك مجددا عزيزي المطور \n↯︙اليك الازرار الخاصه ب أحصائيات  سورس ديفد فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
-{'الاحصائيات'},
-{'المشتركين','المجموعات'},
-{'روابط المجموعات','جلب نسخه احتياطيه'},
-{'تنظيف المشتركين','تنظيف المجموعات'},
-{'نقل الاحصائيات'},
-{'رجوع'},
+{'↫  الاحصائيات ↯'},
+{'↫ المشتركين ↯','↫ المجموعات ↯'},
+{'↫ روابط المجموعات ↯','↫ جلب نسخه احتياطيه ↯'},
+{'↫ تنظيف المشتركين ↯','↫ تنظيف المجموعات ↯'},
+{'↫ نقل الاحصائيات ↯'},
+{'↫ رجوع ↯'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end end
-if text == '↫ المطورين ↯' then 
+if text == '↫  المطورين ↯' then 
 if SecondSudo(msg) then 
 local Sudo_Welcome = '↯︙اهلا بك مجددا عزيزي المطور \n↯︙اليك الازرار الخاصه ب المطورين لسورس ديفد فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
-{'المطورين','الثانويين','المطورين الاساسيين'},
-{'مسح المطورين','مسح الثانويين','مسح المطورين الاساسيين'},
-{'تغير المطور الاساسي'},
-{'وضع كليشه المطور'},
-{'رجوع'},
+{'↫ المطورين ↯','↫ الثانويين ↯','↫ الاساسيين ↯'},
+{'مسح المطورين','مسح الثانويين','مسح الاساسيين'},
+{'↫ تغير المطور الاساسي ↯'},
+{'↫ تغيير كليشه المطور ↯'},
+{'↫ رجوع ↯'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
@@ -1793,12 +1794,12 @@ if text == '↫ التفعيل والتعطيل ↯' then
 if SecondSudo(msg) then 
 local Sudo_Welcome = '↯︙اهلا بك مجددا عزيزي المطور \n↯︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس ديفد فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
-{'تعطيل التواصل','تفعيل التواصل'},
-{'تعطيل ترحيب البوت','تفعيل ترحيب البوت'},
-{'تعطيل المغادره','تفعيل المغادره'},
-{'تعطيل الاذاعه','تفعيل الاذاعه'},
-{'تعطيل البوت الخدمي','تفعيل البوت الخدمي'},
-{'رجوع'},
+{'↫ تعطيل التواصل ↯','↫ تفعيل التواصل ↯'},
+{'↫ تعطيل ترحيب البوت ↯','↫ تفعيل ترحيب البوت ↯'},
+{'↫ تعطيل المغادره ↯','↫ تفعيل المغادره ↯'},
+{'↫ تعطيل الاذاعه ↯','↫ تفعيل الاذاعه ↯'},
+{'↫ تعطيل البوت الخدمي ↯','↫ تفعيل البوت الخدمي ↯'},
+{'↫ رجوع ↯'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
@@ -1807,11 +1808,11 @@ if text == '↫ الاذاعه ↯' then
 if SecondSudo(msg) then 
 local Sudo_Welcome = '↯︙اهلا بك مجددا عزيزي المطور \n↯︙اليك الازرار الخاصه بالاذاعه لسورس ديفد فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
-{'اذاعه بالتثبيت'},
-{'اذاعه خاص','اذاعه عام'},
-{'اذاعه خاص بالتوجيه','اذاعه عام بالتوجيه'},
+{'↫ اذاعه بالتثبيت ↯'},
+{'↫ اذاعه خاص ↯','↫ اذاعه عام ↯'},
+{'↫ اذاعه خاص بالتوجيه ↯','↫ اذاعه عام بالتوجيه ↯'},
 {'الغاء'},
-{'رجوع'},
+{'↫ رجوع ↯'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
@@ -1820,10 +1821,10 @@ if text == '↫ العام ↯' then
 if SecondSudo(msg) then 
 local Sudo_Welcome = '↯︙اهلا بك مجددا عزيزي المطور \n↯︙اليك الازرار الخاصه بالعام لسورس ديفد فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
-{'اضف رد عام','حذف رد عام'},
-{'الردود العام','مسح ردود العام'},
-{'قائمه العام','مسح قائمه العام'},
-{'رجوع'},
+{'↫ اضف رد عام ↯','↫ حذف رد عام ↯'},
+{'↫ ردود العام ↯','↫ مسح ردود العام ↯'},
+{'↫ قائمه العام ↯','مسح قائمه العام'},
+{'↫ رجوع ↯'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
@@ -1832,9 +1833,9 @@ if text == '↫ ردود الخاص ↯' then
 if SecondSudo(msg) then 
 local Sudo_Welcome = '↯︙اهلا بك مجددا عزيزي المطور \n↯︙اليك الازرار الخاصه بردود الخاص لسورس ديفد فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
-{'تعيين رد الخاص','حذف رد الخاص'},
-{'جلب رد الخاص'},
-{'رجوع'},
+{'↫ تعيين رد الخاص ↯','↫ حذف رد الخاص ↯'},
+{'↫ جلب رد الخاص ↯'},
+{'↫ رجوع ↯'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
@@ -1843,10 +1844,11 @@ if text == '↫ الاشتراك الاجباري ↯' then
 if SecondSudo(msg) then 
 local Sudo_Welcome = '↯︙اهلا بك مجددا عزيزي المطور \n↯︙اليك الازرار الخاصه بالاشتراك الاجباري لسورس ديفد فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
-{'تعيين قناة الاشتراك',' حذف قناة الاشتراك'},
-{'تعيين كليشه الاشتراك','حذف كليشه الاشتراك'},
-{'كليشه الاشتراك','قناة الاشتراك'},
-{'رجوع'},
+{'↫  تفعيل الاشتراك الاجباري ↯','↫  تعطيل الاشتراك الاجباري ↯'},
+{'↫ تعيين قناة الاشتراك ↯',' ↫ حذف قناة الاشتراك ↯'},
+{'↫ تغير كليشه الاشتراك ↯','↫ حذف كليشه الاشتراك ↯'},
+{'↫ كليشه الاشتراك ↯','↫ قناة الاشتراك ↯'},
+{'↫ رجوع ↯'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
@@ -1855,7 +1857,7 @@ if text == '↫ المتجر ↯' then
 if SecondSudo(msg) then 
 local Sudo_Welcome = '↯︙اهلا بك مجددا عزيزي المطور \n↯︙اليك الازرار الخاصه بمتجر سورس ديفد فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
-{'المتجر'},
+{'↫  المتجر ↯'},
 {'تفعيل ملف AddedMe.lua','تعطيل ملف AddedMe.lua'},
 {'تفعيل ملف AutoFile.lua','تعطيل ملف AutoFile.lua'},
 {'تفعيل ملف TagAll.lua','تعطيل ملف TagAll.lua'},
@@ -1865,7 +1867,7 @@ local key = {
 {'تفعيل ملف MuteNames.lua','تعطيل ملف MuteNames.lua'},
 {'تفعيل ملف ChangeUser.lua','تعطيل ملف ChangeUser.lua'},
 {'تفعيل ملف ChangePhoto.lua','تعطيل ملف ChangePhoto.lua'},
-{'رجوع'},
+{'↫ رجوع ↯'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
@@ -1969,7 +1971,7 @@ if text == 'حذف رد الخاص' or text == 'حذف كليشه ستارت' or
 DevRio:del(David..'Start:Bot') 
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙تم حذف كليشة الستارت بنجاح', 1, 'md')
 end
-if text == 'جلب رد الخاص' then  
+if text == 'جلب رد الخاص' or text == '↫ جلب رد الخاص ↯' then  
 local start = DevRio:get(David.."Rio:Start:Bot")
 if start then 
 Start_Source = start
@@ -3272,7 +3274,7 @@ ReplyStatus(msg,msg.sender_user_id_,"WrongWay","↯︙ممنوع التكلم ب
 end end
 --     Source David     --
 if SecondSudo(msg) then
-if text == 'جلب نسخه الكروبات' or text == 'جلب نسخه احتياطيه' or text == 'جلب النسخه الاحتياطيه' then
+if text == 'جلب نسخه الكروبات' or text == 'جلب نسخه احتياطيه' or text == 'جلب النسخه الاحتياطيه' or text == '↫ جلب نسخه احتياطيه ↯' then
 local List = DevRio:smembers(David..'Rio:Groups') 
 local BotName = (DevRio:get(David.."Rio:NameBot") or 'ديفد')
 local GetJson = '{"BotId": '..David..',"BotName": "'..BotName..'","GroupsList":{'  
@@ -4250,7 +4252,7 @@ getUser(msg.sender_user_id_,get_me)
 end
 end
 --     Source David     --
-if text == "تعيين قناة الاشتراك" or text == "تغيير قناة الاشتراك" or text == "تعيين الاشتراك الاجباري" or text == "وضع قناة الاشتراك" then
+if text == "تعيين قناة الاشتراك" or text == "تغيير قناة الاشتراك" or text == "تعيين الاشتراك الاجباري" or text == "وضع قناة الاشتراك" or text == "↫ تعيين قناة الاشتراك ↯" then
 if not RioSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -4259,7 +4261,7 @@ send(msg.chat_id_, msg.id_, '↯︙ارسل لي معرف قناة الاشتر�
 end
 return false  
 end
-if text == "تفعيل الاشتراك الاجباري" then  
+if text == "تفعيل الاشتراك الاجباري" or text == "↫  تفعيل الاشتراك الاجباري ↯" then  
 if not RioSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -4274,7 +4276,7 @@ end
 end
 return false  
 end
-if text == "تعطيل الاشتراك الاجباري" then  
+if text == "تعطيل الاشتراك الاجباري" or text == "↫  تعطيل الاشتراك الاجباري ↯" then  
 if not RioSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -4284,7 +4286,7 @@ riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(m
 end
 return false  
 end
-if text == "حذف قناة الاشتراك" or text == "حذف قناه الاشتراك" then
+if text == "حذف قناة الاشتراك" or text == "حذف قناه الاشتراك" or text == "↫ حذف قناة الاشتراك ↯" then
 if not RioSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -4293,7 +4295,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1,"↯︙تم حذف قناة الاشتراك ا
 end
 end
 if SecondSudo(msg) then
-if text == 'جلب قناة الاشتراك' or text == 'قناة الاشتراك' or text == 'الاشتراك الاجباري' or text == 'قناة الاشتراك الاجباري' then
+if text == 'جلب قناة الاشتراك' or text == 'قناة الاشتراك' or text == 'الاشتراك الاجباري' or text == 'قناة الاشتراك الاجباري' or text == '↫ قناة الاشتراك ↯' then
 if DevRio:get(David..'Rio:ChId') then
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChat?chat_id='..DevRio:get(David.."Rio:ChId"))
 local GetInfo = JSON.decode(Check)
@@ -4330,7 +4332,7 @@ DevRio:set(David..'Rio:viewget'..msg.sender_user_id_,true)
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙حسنا قم باعادة توجيه للمنشور الذي تريدني حساب مشاهداته', 1, 'md')
 end
 --     Source David     --
-if text == "السورس" or text == "سورس" then 
+if text == "السورس" or text == "سورس" or text == "↫  السورس ↯" then 
 Text = [[
 Welcome To Source
 ↯︙[David Team](https://t.me/L9L9L)
@@ -6734,7 +6736,7 @@ end
 Dev_Rio(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end
 --     Source David     --
-if text == "المطورين الاساسيين" and RioSudo(msg) or text == "الاساسيين" and RioSudo(msg) then 
+if text == "المطورين الاساسيين" and RioSudo(msg) or text == "الاساسيين" and RioSudo(msg) or text == "↫ الاساسيين ↯" then 
 local List = DevRio:smembers(David..'Rio:RioSudo:')
 text = "↯︙قائمة المطورين الاساسيين ↫ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
@@ -6750,7 +6752,7 @@ end
 Dev_Rio(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
 --     Source David     --
-if text == "المطورين الثانويين" and SecondSudo(msg) or text == "الثانويين" and SecondSudo(msg) then 
+if text == "المطورين الثانويين" and SecondSudo(msg) or text == "الثانويين" and SecondSudo(msg) or text == "↫ الثانويين ↯" and SecoundSudo(msg) then 
 local List = DevRio:smembers(David..'Rio:SecondSudo:')
 text = "↯︙قائمة المطورين الثانويين ↫ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
@@ -6767,7 +6769,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
 --     Source David     --
 if SudoBot(msg) then
-if text == "قائمه العام" and ChCheck(msg) or text == "المحظورين عام" and ChCheck(msg) or text == "المكتومين عام" and ChCheck(msg) or text == "↫ قائمه العام ↯" and ChCheck(msg) then 
+if text == "قائمه العام" and ChCheck(msg) or text == "المحظورين عام" and ChCheck(msg) or text == "المكتومين عام" and ChCheck(msg) or text == "↫ قائمه العام ↯" and ChCheck(msg) or text == "↫ قائمه العام ↯" and ChCheck(msg) then 
 local BanAll = DevRio:smembers(David..'Rio:BanAll:')
 local MuteAll = DevRio:smembers(David..'Rio:MuteAll:')
 if #BanAll ~= 0 then 
@@ -7777,7 +7779,7 @@ return false
 end
 --     Source David     --
 if SudoBot(msg) then
-if text and text == "الاحصائيات" and ChCheck(msg) or text and text == "↫ الاحصائيات ↯" then
+if text and text == "الاحصائيات" and ChCheck(msg) or text and text == "↫  الاحصائيات ↯" then
 local gps = DevRio:scard(David.."Rio:Groups") local users = DevRio:scard(David.."Rio:Users") 
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙احصائيات البوت ↫ ⤈\n↯︙عدد المشتركين ↫ ❨ '..users..' ❩\n↯︙عدد المجموعات ↫ ❨ '..gps..' ❩', 1, 'md')
 end
@@ -7807,7 +7809,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙تم تنظيف *'..Number..'* من ا�
 DevRio:setex(David..'Delete:Time'..msg.chat_id_..':'..msg.sender_user_id_,300,true)
 end 
 end
-if text == "تنظيف المشتركين" and SecondSudo(msg) and ChCheck(msg) then 
+if text == "تنظيف المشتركين" and SecondSudo(msg) and ChCheck(msg) or text == "↫ تنظيف المشتركين ↯" and SecondSudo(msg) and ChCheck(msg) then 
 local pv = DevRio:smembers(David.."Rio:Users")
 local sendok = 0
 for i = 1, #pv do
@@ -7834,7 +7836,7 @@ end
 return false
 end
 --     Source David     --
-if text == "تنظيف الكروبات" and SecondSudo(msg) and ChCheck(msg) or text == "تنظيف المجموعات" and SecondSudo(msg) and ChCheck(msg) then 
+if text == "تنظيف الكروبات" and SecondSudo(msg) and ChCheck(msg) or text == "تنظيف المجموعات" and SecondSudo(msg) and ChCheck(msg) or text == "↫ تنظيف المجموعات ↯" and SecondSudo(msg) and ChCheck(msg) then 
 local group = DevRio:smembers(David.."Rio:Groups")
 local w = 0
 local q = 0
@@ -9660,7 +9662,7 @@ DevRio:set(David..'Rio:Num:Add:Bot',Num)
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙تم وضع عدد الاعضاء ↫ *'..Num..'* عضو', 1, 'md')
 end
 --     Source David     --
-if text == 'تفعيل البوت الخدمي' then 
+if text == 'تفعيل البوت الخدمي' or text == '↫ تفعيل البوت الخدمي ↯' then 
 if not RioSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙للمطور الاساسي فقط', 1, 'md')
 else 
@@ -9669,7 +9671,7 @@ riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(m
 DevRio:del(David..'Rio:Lock:FreeBot'..David) 
 end 
 end
-if text == 'تعطيل البوت الخدمي' then 
+if text == 'تعطيل البوت الخدمي' or text == '↫ تعطيل البوت الخدمي ↯' then 
 if not RioSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙للمطور الاساسي فقط', 1, 'md')
 else 
@@ -9858,7 +9860,7 @@ end,nil)
 end,nil)
 end
 --     Source David     --
-if text == 'روابط الكروبات' or text == 'روابط المجموعات' then
+if text == 'روابط الكروبات' or text == 'روابط المجموعات' or text == '↫ روابط المجموعات ↯' then
 if not RioSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -9950,7 +9952,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, "↯︙تم اذاعة "..RioText.." بنجا�
 DevRio:del(David.."Rio:Send:Pv"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source David     --
-if text == "اذاعه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "اذاعه عام" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعه عام ↯" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevRio:get(David.."Rio:Send:Bot"..David) and not SecondSudo(msg) then 
 send(msg.chat_id_, msg.id_,"↯︙الاذاعه معطله من قبل المطور الاساسي")
 return false
@@ -10017,7 +10019,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, "↯︙تم اذاعة "..RioText.." بنجا�
 DevRio:del(David.."Rio:Send:Gp"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source David     --
-if text == "اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "اذاعه عام بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعه عام بالتوجيه ↯" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevRio:get(David.."Rio:Send:Bot"..David) and not SecondSudo(msg) then 
 send(msg.chat_id_, msg.id_,"↯︙الاذاعه معطله من قبل المطور الاساسي")
 return false
@@ -10343,7 +10345,7 @@ return false
 end
 end
 --     Source David     --
-if  text == "ردود المطور" and SecondSudo(msg) or text == "الردود العام" and SecondSudo(msg) or text == "ردود العام" and SecondSudo(msg) or text == "↫ الردود العام ↯" and SecondSudo(msg) then
+if  text == "ردود المطور" and SecondSudo(msg) or text == "الردود العام" and SecondSudo(msg) or text == "↫ ردود العام ↯" and SecondSudo(msg) or text == "↫ الردود العام ↯" and SecondSudo(msg) then
 local redod = DevRio:smembers(David.."Rio:Sudo:AllRed")
 MsgRep = '↯︙ردود المطور ↫ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n'
 for k,v in pairs(redod) do
@@ -10371,7 +10373,7 @@ MsgRep = '↯︙لا توجد ردود مضافه'
 end
 send(msg.chat_id_,msg.id_,MsgRep)
 end
-if text == "حذف ردود المطور" and SecondSudo(msg) or text == "حذف ردود العام" and SecondSudo(msg) or text == "مسح ردود المطور" and SecondSudo(msg) then
+if text == "حذف ردود المطور" and SecondSudo(msg) or text == "حذف ردود العام" and SecondSudo(msg) or text == "مسح ردود المطور" and SecondSudo(msg) or text == "↫ مسح ردود العام ↯" then
 local redod = DevRio:smembers(David.."Rio:Sudo:AllRed")
 if #redod == 0 then
 Dev_Rio(msg.chat_id_, msg.id_, 1, "↯︙لا توجد ردود مضافه" ,  1, "md")
@@ -10856,7 +10858,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end
 --     Source David     --
 if SecondSudo(msg) then
-if text == "تحديث السورس" or text == "تحديث سورس" then 
+if text == "تحديث السورس" or text == "تحديث سورس" or text == "↫ تحديث السورس ↯" then 
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙جاري تحديث سورس ديفد', 1, 'md') 
 os.execute('rm -rf David.lua') 
 os.execute('wget https://raw.githubusercontent.com/David-Team-Rio/David/master/David.lua') 
@@ -10880,7 +10882,7 @@ DevRio:set(David.."Rio:ChText",DevRio:get(David.."Rio:textch:user"))
 DevRio:del(David.."Rio:textch:user")
 end
 --     Source David     --
-if text == 'نقل الاحصائيات' then
+if text == 'نقل الاحصائيات' or text == '↫ نقل الاحصائيات ↯' then
 local Users = DevRio:smembers(David.."User_Bot")
 local Groups = DevRio:smembers(David..'Chek:Groups')
 local Sudos = DevRio:smembers(David.."Sudo:User")
@@ -10947,7 +10949,7 @@ Files = '↯︙لا توجد ملفات في البوت'
 end
 send(msg.chat_id_, msg.id_,Files)
 end
-if text == "متجر الملفات" or text == 'المتجر' then
+if text == "متجر الملفات" or text == 'المتجر' or text == '↫  المتجر ↯' then
 local Get_Files, res = https.request("https://raw.githubusercontent.com/David-Team-Rio/DavidFiles/master/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
@@ -11012,12 +11014,12 @@ DevRio:del(David..'Rio:Text:BotWelcome')
 DevRio:del(David..'Rio:Photo:BotWelcome')
 return false
 end 
-if text and (text == 'تفعيل ترحيب البوت' or text == 'تفعيل معلومات الترحيب') and SecondSudo(msg) then    
+if text and (text == 'تفعيل ترحيب البوت' or text == 'تفعيل معلومات الترحيب' or text == '↫ تفعيل ترحيب البوت ↯') and SecondSudo(msg) then    
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙تم تفعيل الترحيب عند اضافة البوت في المجموعه', 1, 'md')   
 DevRio:del(David..'Rio:Lock:BotWelcome')
 return false
 end 
-if text and (text == 'تعطيل ترحيب البوت' or text == 'تعطيل معلومات الترحيب') and SecondSudo(msg) then    
+if text and (text == 'تعطيل ترحيب البوت' or text == 'تعطيل معلومات الترحيب' or text == '↫ تعطيل ترحيب البوت ↯') and SecondSudo(msg) then    
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙تم تعطيل الترحيب عند اضافة البوت في المجموعه', 1, 'md')   
 DevRio:set(David..'Rio:Lock:BotWelcome',true)
 return false
@@ -11054,7 +11056,7 @@ end
 return false
 end
 --     Source David     --
-if text and text:match("^ضع كليشه المطور$") or text and text:match("^وضع كليشه المطور$") or text and text:match("^تغيير كليشه المطور$") then
+if text and text:match("^ضع كليشه المطور$") or text and text:match("^وضع كليشه المطور$") or text and text:match("^تغيير كليشه المطور$") or text and text:match("^↫ تغيير كليشه المطور ↯$") then
 if not SecondSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -11079,12 +11081,12 @@ local texxt = string.match(text, "(.*)")
 DevRio:set(David..'Rio:ChText',texxt)
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙تم تغيير كليشة الاشتراك الاجباري', 1, 'md')
 end
-if text and text:match("^تغير كليشه الاشتراك$") and SecondSudo(msg) or text and text:match("^تغيير كليشه الاشتراك$") and SecondSudo(msg) then  
+if text and text:match("^↫ تغير كليشه الاشتراك ↯$") and SecondSudo(msg) or text and text:match("^تغيير كليشه الاشتراك$") and SecondSudo(msg) then  
 DevRio:setex(David.."textch:user"..msg.chat_id_.."" .. msg.sender_user_id_, 300, true)  
 local text = '↯︙حسنا ارسل كليشة الاشتراك الجديده'  
 Dev_Rio(msg.chat_id_, msg.id_, 1,text, 1, 'md') 
 end
-if text == "حذف كليشه الاشتراك الاجباري" or text == "حذف كليشه الاشتراك" then  
+if text == "حذف كليشه الاشتراك الاجباري" or text == "↫ حذف كليشه الاشتراك ↯" then  
 if not SecondSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -11092,7 +11094,7 @@ DevRio:del(David..'Rio:ChText')
 textt = "↯︙تم حذف كليشة الاشتراك الاجباري"
 Dev_Rio(msg.chat_id_, msg.id_, 1,textt, 1, 'md') 
 end end
-if text == 'كليشه الاشتراك' or text == 'جلب كليشه الاشتراك' then
+if text == 'كليشه الاشتراك' or text == 'جلب كليشه الاشتراك' or text == '↫ كليشه الاشتراك ↯' then
 if not SecondSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -11117,7 +11119,7 @@ else
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙لم يتم تعيين قناة الاشتراك الاجباري \n↯︙ارسل ↫ تعيين قناة الاشتراك للتعيين ', 1, 'md')
 end end end end
 --     Source David     --
-if text == 'القناة' or text == 'قناة السورس' or text == 'قناه السورس' or text == 'قنات السورس' then 
+if text == 'القناة' or text == 'قناة السورس' or text == 'قناه السورس' or text == 'قنات السورس' or text == '↫ قناة السورس ↯' then 
 Text = [[
 ↯︙[قناة السورس](https://t.me/L9L9L)
 ]]
@@ -11130,7 +11132,7 @@ https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' ..
 return false
 end
 --     Source David     --
-if text == "مبرمج السورس" or text == "مطور السورس" or text == "وين المبرمج" or text == "المبرمج" then 
+if text == "مبرمج السورس" or text == "مطور السورس" or text == "وين المبرمج" or text == "المبرمج" or text == "↫ مبرمج السورس ↯" then 
 Text = [[
 ↯︙[مبرمج السورس](https://t.me/tsttt)
 ]]
@@ -11144,7 +11146,7 @@ return false
 end
 --     Source David     --
 if RioSudo(msg) then 
-if text == 'معلومات السيرفر' or text == 'السيرفر' then 
+if text == 'معلومات السيرفر' or text == 'السيرفر' or text == '↫ السيرفر ↯' then 
 Dev_Rio(msg.chat_id_, msg.id_, 1, io.popen([[
 LinuxVersion=`lsb_release -ds`
 MemoryUsage=`free -m | awk 'NR==2{printf "%s/%sMB {%.2f%%}\n", $3,$2,$3*100/$2 }'`
