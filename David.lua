@@ -4226,7 +4226,7 @@ end,nil)
 end
 --     Source David     --
 if text == 'غادر' and SudoBot(msg) then
-if DevRio:get(David.."Rio:Left:Bot"..David) and not Bot(msg) then
+if DevRio:get(David.."Rio:Left:Bot"..David) then
 Dev_Rio(msg.chat_id_,msg.id_, 1, "↯︙المغادره معطله من قبل المطور الاساسي", 1, 'md')
 return false  
 end
@@ -11207,7 +11207,7 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 DevRio:incr(David..'Rio:EditMsg'..result.chat_id_..result.sender_user_id_)
 local text = result.content_.text_ or result.content_.caption_
 local Text = result.content_.text_
-if DevRio:get(David..'Rio:Lock:EditMsgs'..msg.chat_id_) and not Text and not BasicConstructor(result) then
+if DevRio:get(David..'Rio:Lock:EditMsgs'..msg.chat_id_) and not Text and not SudoBot(result) then
 DeleteMessage(msg.chat_id_,{[0] = data.message_id_})
 Media = 'الميديا'
 if result.content_.ID == "MessagePhoto" then Media = 'الصوره'
