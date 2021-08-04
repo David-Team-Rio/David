@@ -9008,7 +9008,7 @@ local DavidTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David..'Rio:Audios:Rio'..msg.chat_id_,true)  
 end
-if text == text == "غنيلي" or text == "↫ غنيلي ↯" and not DevRio:get(David..'Rio:Audios:Rio'..msg.chat_id_) and SourceCh(msg) then
+if text == "غنيلي" or text == "↫ غنيلي ↯" and not DevRio:get(David..'Rio:Audios:Rio'..msg.chat_id_) and SourceCh(msg) then
 data,res = https.request('https://ccccxcc.ml/David/Audios.php')
 if res == 200 then
 Audios = json:decode(data)
