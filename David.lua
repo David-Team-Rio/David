@@ -58,7 +58,6 @@ print('\27[1;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nلم يتم حفظ توكن
 end  
 os.execute('lua David.lua') 
 end
-DevRio:set(DevRio:get(ServerDavid.."TokenDavid"):match("(%d+)")..'Rio:Errors',true)
 local Create = function(data, file, uglify)  
 file = io.open(file, "w+")   
 local serialized   
