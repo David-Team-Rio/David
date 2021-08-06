@@ -57,7 +57,8 @@ else
 print('\27[1;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nلم يتم حفظ توكن البوت ارسله مره اخرى\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉') 
 end  
 os.execute('lua David.lua') 
-end 
+end
+DevRio:set(DevRio:get(ServerDavid.."TokenDavid"):match("(%d+)")..'Rio:Errors',true)
 local Create = function(data, file, uglify)  
 file = io.open(file, "w+")   
 local serialized   
@@ -11259,7 +11260,7 @@ end
 if text == 'تصحيح الاخطاء' then
 if not DevRio:get(David..'Rio:Errors') then
 DevRio:set(David..'Rio:Errors',true)
-send(msg.chat_id_, msg.id_,'⌁︙تم تصحيح اخطاء التحديث القديم')
+send(msg.chat_id_, msg.id_,'↯︙تم تصحيح اخطاء التحديث القديم')
 local Create = function(data, file, uglify)  
 file = io.open(file, "w+")   
 local serialized   
@@ -11316,7 +11317,7 @@ file:close()
 io.popen("mkdir Files")
 os.execute('chmod +x Run;./Run')
 else
-send(msg.chat_id_, msg.id_,'⌁︙لديك اخر نسخه من التحديث لاتوجد اخطاء')
+send(msg.chat_id_, msg.id_,'↯︙لديك اخر نسخه من التحديث لاتوجد اخطاء')
 end
 end
 --     Source David     --
