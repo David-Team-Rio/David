@@ -246,7 +246,7 @@ end
 ----  BasicConstructor  ----
 function BasicConstructor(msg) 
 local Status = DevRio:sismember(David..'Rio:BasicConstructor:'..msg.chat_id_,msg.sender_user_id_) 
-if Status or SudoBot(msg) or BasicConstructorAll(msg) or RioConstructor(msg) or RioSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
+if Status or SudoBot(msg) or RioConstructor(msg) or RioSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
 return false  
@@ -2163,7 +2163,7 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {{text="♟ الشطرنج ♟",url='https://t.me/T4TTTTBOT?game=chess'}},
 {{text="لعبة فلابي بيرد 🐥",url='https://t.me/awesomebot?game=FlappyBird'},{text="تحدي الرياضيات",url='https://t.me/gamebot?game=MathBattle'}},
-{{text="اكس او",url='t.me/XO_AABOT?start3836619'},{text="سباق الدراجات 🏍",url='https://t.me/gamee?game=MotoFX'}},
+{{text="اكس او",url='t.me/xobot?start'},{text="سباق الدراجات 🏍",url='https://t.me/gamee?game=MotoFX'}},
 {{text="سباق سيارات 🏎",url='https://t.me/gamee?game=F1Racer'},{text="متشابه 👾",url='https://t.me/gamee?game=DiamondRows'}},
 {{text="كرة قدم ⚽",url='https://t.me/gamee?game=FootballStar'}},
 {{text="ورق🤹‍♂",url='https://t.me/gamee?game=Hexonix'},{text="Hexonix❌",url='https://t.me/gamee?game=Hexonix'}},
@@ -9709,7 +9709,7 @@ DevRio:set(David.."Rio:Lock:GpLinks"..msg.chat_id_,"ok")
 return false  
 end
 end
-if text == "تفعيل حذف الردود" and ChCheck(msg) then 
+if text == "تفعيل حذف الردود" and ChCheck(msg) or text == "تفعيل مسح الردود" and ChCheck(msg) then 
 if RioConstructor(msg) then
 local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تفعيل حذف ردود المدير'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
@@ -9717,7 +9717,7 @@ DevRio:del(David.."Rio:Lock:Rd"..msg.chat_id_)
 return false  
 end
 end
-if text == "تعطيل حذف الردود" and ChCheck(msg) then 
+if text == "تعطيل حذف الردود" and ChCheck(msg) or text == "تعطيل مسح الردود" and ChCheck(msg) then 
 if RioConstructor(msg) then
 local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل حذف ردود المدير'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
@@ -9725,6 +9725,7 @@ DevRio:set(David.."Rio:Lock:Rd"..msg.chat_id_,"ok")
 return false  
 end
 end
+
 --     Source David     --
 if text and text:match('^تفعيل$') and SudoBot(msg) and ChCheck(msg) then
 if ChatType ~= 'sp' then
