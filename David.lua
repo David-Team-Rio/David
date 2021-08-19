@@ -11228,7 +11228,7 @@ if SecondSudo(msg) then
 if text == "تحديث السورس" and SourceCh(msg) or text == "تحديث سورس" and SourceCh(msg) or text == "↫ تحديث السورس ᥀" and SourceCh(msg) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙جاري تحديث سورس ديفد', 1, 'md') 
 os.execute('rm -rf David.lua') 
-os.execute('wget https://raw.githubusercontent.com/DavidTeam8/David/master/David.lua') 
+os.execute('wget https://raw.githubusercontent.com/David-Team-Rio/David/master/David.lua') 
 dofile('David.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
@@ -11564,5 +11564,5 @@ end
 -- This Source Was Developed By (Rio) @tsttt.--
 --   This Is The Source Channel @L9L9L .   --
 --                - David -                 --
---        -- https://t.me/L9L9L --         --
-------------------------------------------------   
+--        -- https://t.me/L9L9L --          --
+------------------------------------------------ 
