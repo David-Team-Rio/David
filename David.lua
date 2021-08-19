@@ -4906,6 +4906,8 @@ if SudoId(result.sender_user_id_) == true then
 Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙لاتستطيع تنزيل المطور الاساسي", 1, 'md')
 return false 
 end end
+if DevRio:sismember(David..'Rio:RioSudo:',result.sender_user_id_) then
+riosudo = 'المطورين الاساسيين • ' else riosudo = '' end
 if DevRio:sismember(David..'Rio:SecondSudo:',result.sender_user_id_) then
 secondsudo = 'المطورين الثانويين • ' else secondsudo = '' end
 if DevRio:sismember(David..'Rio:SudoBot:',result.sender_user_id_) then
@@ -4926,11 +4928,12 @@ if DevRio:sismember(David..'Rio:Cleaner:'..msg.chat_id_, result.sender_user_id_)
 cleaner = 'المنظفين • ' else cleaner = ''
 end
 if RankChecking(result.sender_user_id_,msg.chat_id_) ~= false then
-ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙تم تنزيله من ↫ ⤈\n~ ( "..secondsudo..sudobot..owner..basicconstructor..constructor..manager..admins..vipmem..cleaner.." ) ~")  
+ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙تم تنزيله من ↫ ⤈\n~ ( "..riosudo..secondsudo..sudobot..owner..basicconstructor..constructor..manager..admins..vipmem..cleaner.." ) ~")  
 else 
 ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙لم تتم ترقيته مسبقا")  
 end
 if RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'sudoid' then
+DevRio:srem(David..'Rio:RioSudo:', result.sender_user_id_)
 DevRio:srem(David..'Rio:SecondSudo:', result.sender_user_id_)
 DevRio:srem(David..'Rio:SudoBot:', result.sender_user_id_)
 DevRio:srem(David..'Rio:Owner:'..msg.chat_id_,result.sender_user_id_)
@@ -5007,6 +5010,8 @@ if SudoId(result.id_) == true then
 Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙لاتستطيع تنزيل المطور الاساسي", 1, 'md')
 return false 
 end
+if DevRio:sismember(David..'Rio:RioSudo:',result.id_) then
+riosudo = 'المطورين الاساسيين • ' else riosudo = '' end
 if DevRio:sismember(David..'Rio:SecondSudo:',result.id_) then
 secondsudo = 'المطورين الثانويين • ' else secondsudo = '' end
 if DevRio:sismember(David..'Rio:SudoBot:',result.id_) then
@@ -5027,11 +5032,12 @@ if DevRio:sismember(David..'Rio:Cleaner:'..msg.chat_id_, result.id_) then
 cleaner = 'المنظفين • ' else cleaner = ''
 end
 if RankChecking(result.id_,msg.chat_id_) ~= false then
-ReplyStatus(msg,result.id_,"Reply","᥀︙تم تنزيله من ↫ ⤈\n~ ( "..secondsudo..sudobot..owner..basicconstructor..constructor..manager..admins..vipmem..cleaner.." ) ~")  
+ReplyStatus(msg,result.id_,"Reply","᥀︙تم تنزيله من ↫ ⤈\n~ ( "..riosudo..secondsudo..sudobot..owner..basicconstructor..constructor..manager..admins..vipmem..cleaner.." ) ~")  
 else 
 ReplyStatus(msg,result.id_,"Reply","᥀︙لم تتم ترقيته مسبقا")  
 end 
 if RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'sudoid' then
+DevRio:srem(David..'Rio:RioSudo:', result.id_)
 DevRio:srem(David..'Rio:SecondSudo:', result.id_)
 DevRio:srem(David..'Rio:SudoBot:', result.id_)
 DevRio:srem(David..'Rio:Owner:'..msg.chat_id_,result.id_)
@@ -5820,7 +5826,7 @@ end
 --     Source David     --
 if Admin(msg) then
 if msg.reply_to_message_id_ ~= 0 then
-if text and (text:match("^مسح$") or text:match("^حذف$") or text:match("^↫ اخفاء الكيبورد ᥀$")) and ChCheck(msg) then
+if text and (text:match("^مسح$") or text:match("^حذف$")) and ChCheck(msg) then
 DeleteMessage(msg.chat_id_,{[0] = msg.reply_to_message_id_})
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
 end end end
