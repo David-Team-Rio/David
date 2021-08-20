@@ -5466,6 +5466,10 @@ end end
 if Owner(msg) then
 if text ==('رفع منشئ اساسي') and SourceCh(msg) then
 function raf_reply(extra, result, success)
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 DevRio:sadd(David..'Rio:BasicConstructor:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙تم رفعه منشئ اساسي")  
 end 
@@ -5475,6 +5479,10 @@ end end
 if text and text:match('^رفع منشئ اساسي @(.*)') and SourceCh(msg) then
 local username = text:match('^رفع منشئ اساسي @(.*)')
 function promreply(extra,result,success)
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 if result.id_ then
 DevRio:sadd(David..'Rio:BasicConstructor:'..msg.chat_id_,result.id_)
 ReplyStatus(msg,result.id_,"Reply","᥀︙تم رفعه منشئ اساسي")  
@@ -5485,6 +5493,10 @@ resolve_username(username,promreply)
 end
 if text and text:match('^رفع منشئ اساسي (%d+)') and SourceCh(msg) then
 local user = text:match('رفع منشئ اساسي (%d+)')
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 DevRio:sadd(David..'Rio:BasicConstructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","᥀︙تم رفعه منشئ اساسي")  
 end
@@ -5522,6 +5534,10 @@ end
 if BasicConstructor(msg) then
 if text ==('رفع منشئ') and SourceCh(msg) then
 function raf_reply(extra, result, success)
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 DevRio:sadd(David..'Rio:Constructor:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙تم رفعه في قائمة المنشئين")  
 end 
@@ -5531,6 +5547,10 @@ end end
 if text and text:match('^رفع منشئ @(.*)') and SourceCh(msg) then
 local username = text:match('^رفع منشئ @(.*)')
 function promreply(extra,result,success)
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 if result.id_ then
 DevRio:sadd(David..'Rio:Constructor:'..msg.chat_id_,result.id_)
 ReplyStatus(msg,result.id_,"Reply","᥀︙تم رفعه في قائمة المنشئين")  
@@ -5541,6 +5561,10 @@ resolve_username(username,promreply)
 end
 if text and text:match('^رفع منشئ (%d+)') and SourceCh(msg) then
 local user = text:match('رفع منشئ (%d+)')
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 DevRio:sadd(David..'Rio:Constructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","᥀︙تم رفعه في قائمة المنشئين")  
 end
@@ -5576,6 +5600,10 @@ end
 if Constructor(msg) then
 if text ==('رفع مدير') and SourceCh(msg) then
 function prom_reply(extra, result, success)
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 DevRio:sadd(David..'Rio:Managers:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙تم رفعه في قائمة المدراء")  
 end  
@@ -5585,6 +5613,10 @@ end end
 if text and text:match('^رفع مدير @(.*)') and SourceCh(msg) then
 local username = text:match('^رفع مدير @(.*)')
 function promreply(extra,result,success)
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 if result.id_ then
 DevRio:sadd(David..'Rio:Managers:'..msg.chat_id_,result.id_)
 ReplyStatus(msg,result.id_,"Reply","᥀︙تم رفعه في قائمة المدراء")  
@@ -5595,6 +5627,10 @@ resolve_username(username,promreply)
 end 
 if text and text:match('^رفع مدير (%d+)') and SourceCh(msg) then
 local user = text:match('رفع مدير (%d+)')
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 DevRio:sadd(David..'Rio:Managers:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","᥀︙تم رفعه في قائمة المدراء")  
 end
@@ -5628,6 +5664,10 @@ end
 --       Set Cleaner      --
 if text ==('رفع منظف') and SourceCh(msg) then
 function prom_reply(extra, result, success)
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 DevRio:sadd(David..'Rio:Cleaner:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙تم رفعه في قائمة المنظفين")  
 end 
@@ -5637,6 +5677,10 @@ end end
 if text and text:match('^رفع منظف @(.*)') and SourceCh(msg) then
 local username = text:match('^رفع منظف @(.*)')
 function promreply(extra,result,success)
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 if result.id_ then
 DevRio:sadd(David..'Rio:Cleaner:'..msg.chat_id_,result.id_)
 ReplyStatus(msg,result.id_,"Reply","᥀︙تم رفعه في قائمة المنظفين")  
@@ -5647,6 +5691,10 @@ resolve_username(username,promreply)
 end
 if text and text:match('^رفع منظف (%d+)') and SourceCh(msg) then
 local user = text:match('رفع منظف (%d+)')
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
+return false
+end
 DevRio:sadd(David..'Rio:Cleaner:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","᥀︙تم رفعه في قائمة المنظفين")  
 end
@@ -5681,7 +5729,7 @@ end end
 if Manager(msg) then
 if text ==('رفع ادمن') and SourceCh(msg) then
 function prom_reply(extra, result, success)
-if not BasicConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
 return false
 end
@@ -5694,7 +5742,7 @@ end end
 if text and text:match('^رفع ادمن @(.*)') and SourceCh(msg) then
 local username = text:match('^رفع ادمن @(.*)')
 function promreply(extra,result,success)
-if not BasicConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
 return false
 end
@@ -5708,7 +5756,7 @@ resolve_username(username,promreply)
 end
 if text and text:match('^رفع ادمن (%d+)') and SourceCh(msg) then
 local user = text:match('رفع ادمن (%d+)')
-if not BasicConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
 return false
 end
@@ -5746,7 +5794,7 @@ end end
 if Admin(msg) then
 if text ==('رفع مميز') and SourceCh(msg) then
 function prom_reply(extra, result, success)
-if not BasicConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
 return false
 end
@@ -5759,7 +5807,7 @@ end end
 if text and text:match('^رفع مميز @(.*)') and SourceCh(msg) then
 local username = text:match('^رفع مميز @(.*)')
 function promreply(extra,result,success)
-if not BasicConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
 return false
 end
@@ -5773,7 +5821,7 @@ resolve_username(username,promreply)
 end
 if text and text:match('^رفع مميز (%d+)') and SourceCh(msg) then
 local user = text:match('رفع مميز (%d+)')
-if not BasicConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'᥀︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
 return false
 end
@@ -5807,7 +5855,7 @@ DevRio:srem(David..'Rio:VipMem:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","᥀︙تم تنزيله من قائمة المميزين")  
 end end 
 --     Source David     --
-if BasicConstructor(msg) then
+if RioConstructor(msg) then
 if text and text:match("^رفع مشرف$") and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChatMember?chat_id='..msg.chat_id_..'&user_id='..David)
@@ -5923,33 +5971,33 @@ DeleteMessage(msg.chat_id_,{[0] = msg.id_})
 end end end
 --     Source David     --
 if RioConstructor(msg) then
-if text == "تفعيل الحظر" and ChCheck(msg) or text == "تفعيل الطرد" and ChCheck(msg) then
+if text == "تفعيل الحظر" and ChCheck(msg) and SourceCh(msg) or text == "تفعيل الطرد" and ChCheck(msg) and SourceCh(msg) then
 DevRio:del(David.."Rio:Lock:KickBan"..msg.chat_id_)
 local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تفعيل الطرد والحظر'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 end
-if text == "تعطيل الحظر" and ChCheck(msg) or text == "تعطيل الطرد" and ChCheck(msg) then
+if text == "تعطيل الحظر" and ChCheck(msg) and SourceCh(msg) or text == "تعطيل الطرد" and ChCheck(msg) and SourceCh(msg) then
 DevRio:set(David.."Rio:Lock:KickBan"..msg.chat_id_,"true")
 local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل الطرد والحظر'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 end
-if text == "تفعيل الكتم" and ChCheck(msg) or text == "تفعيل التقييد" and ChCheck(msg) then
+if text == "تفعيل الكتم" and ChCheck(msg) and SourceCh(msg) or text == "تفعيل التقييد" and ChCheck(msg) and SourceCh(msg) then
 DevRio:del(David.."Rio:Lock:MuteTked"..msg.chat_id_)
 local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تفعيل الكتم والتقيد'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 end
-if text == "تعطيل الكتم" and ChCheck(msg) or text == "تعطيل التقييد" and ChCheck(msg) then
+if text == "تعطيل الكتم" and ChCheck(msg) and SourceCh(msg) or text == "تعطيل التقييد" and ChCheck(msg) and SourceCh(msg) then
 DevRio:set(David.."Rio:Lock:MuteTked"..msg.chat_id_,"true")
 local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل الكتم والتقيد'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 end
 end
 if RioConstructor(msg) then
-if text == "تفعيل الرفع" and ChCheck(msg) or text == "تفعيل الترقيه" and ChCheck(msg) then
+if text == "تفعيل الرفع" and ChCheck(msg) and SourceCh(msg) or text == "تفعيل الترقيه" and ChCheck(msg) and SourceCh(msg) then
 DevRio:del(David.."Rio:Lock:ProSet"..msg.chat_id_)
-Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙تم تفعيل رفع ↫ المنشئ الاساسي • المنشئ • المدير • الادمن • المميز', 1, 'md')
+Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙تم تعطيل رفع ↫ المنشئ الاساسي • المنشئ • المدير • الادمن • المميز', 1, 'md')
 end
-if text == "تعطيل الرفع" and ChCheck(msg) or text == "تعطيل الترقيه" and ChCheck(msg) then
+if text == "تعطيل الرفع" and ChCheck(msg) and SourceCh(msg) or text == "تعطيل الترقيه" and ChCheck(msg) and SourceCh(msg) then
 DevRio:set(David.."Rio:Lock:ProSet"..msg.chat_id_,"true")
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙تم تعطيل رفع ↫ المنشئ الاساسي • المنشئ • المدير • الادمن • المميز', 1, 'md')
 end
@@ -5957,10 +6005,10 @@ end
 --     Source David     --
 --          Kick          --
 if Admin(msg) then
-if text ==('طرد') and ChCheck(msg) then
+if text ==('طرد') and ChCheck(msg) and SourceCh(msg) then
 function KickReply(extra, result, success)
-if not Constructor(msg) and DevRio:get(David.."Rio:Lock:KickBan"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر من قبل المنشئين')
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:KickBan"..msg.chat_id_) then 
+send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
 return false
 end
 if RankChecking(result.sender_user_id_, result.chat_id_) then
@@ -5983,11 +6031,11 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),KickReply)
 end end
-if text and text:match('^طرد @(.*)') and ChCheck(msg) then
+if text and text:match('^طرد @(.*)') and ChCheck(msg) and SourceCh(msg) then
 local username = text:match('^طرد @(.*)')
 function KickUser(extra,result,success)
-if not Constructor(msg) and DevRio:get(David.."Rio:Lock:KickBan"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر من قبل المنشئين')
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:KickBan"..msg.chat_id_) then 
+send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
 return false
 end
 if result.id_ then
@@ -6012,10 +6060,10 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,KickUser)
 end
-if text and text:match('^طرد (%d+)') and ChCheck(msg) then
+if text and text:match('^طرد (%d+)') and ChCheck(msg) and SourceCh(msg) then
 local user = text:match('طرد (%d+)')
-if not Constructor(msg) and DevRio:get(David.."Rio:Lock:KickBan"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر من قبل المنشئين')
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:KickBan"..msg.chat_id_) then 
+send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
 return false
 end
 if RankChecking(user, msg.chat_id_) then
@@ -6039,10 +6087,10 @@ end
 --     Source David     --
 --          Ban           --
 if Admin(msg) then
-if text ==('حضر') or text ==('حظر') and ChCheck(msg) then
+if text ==('حضر') or text ==('حظر') and ChCheck(msg) and SourceCh(msg) then
 function BanReply(extra, result, success)
-if not Constructor(msg) and DevRio:get(David.."Rio:Lock:KickBan"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر من قبل المنشئين')
+if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:KickBan"..msg.chat_id_) then 
+send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
 return false
 end
 if RankChecking(result.sender_user_id_, result.chat_id_) then
@@ -6066,11 +6114,11 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),BanReply)
 end end
-if text and (text:match('^حضر @(.*)') or text:match('^حظر @(.*)')) and ChCheck(msg) then
+if text and (text:match('^حضر @(.*)') or text:match('^حظر @(.*)')) and ChCheck(msg) and SourceCh(msg) then
 local username = text:match('^حضر @(.*)') or text:match('^حظر @(.*)')
 function BanUser(extra,result,success)
-if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:KickBan"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر')
+if not Constructor(msg) and DevRio:get(David.."Rio:Lock:KickBan"..msg.chat_id_) then 
+send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
 return false
 end
 if result.id_ then
@@ -6096,10 +6144,10 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,BanUser)
 end
-if text and (text:match('^حضر (%d+)') or text:match('^حظر (%d+)')) and ChCheck(msg) then
+if text and (text:match('^حضر (%d+)') or text:match('^حظر (%d+)')) and ChCheck(msg) and SourceCh(msg) then
 local user = text:match('حضر (%d+)') or text:match('حظر (%d+)')
 if not RioConstructor(msg) and DevRio:get(David.."Rio:Lock:KickBan"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر')
+send(msg.chat_id_, msg.id_,'᥀︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
 return false
 end
 if RankChecking(user, msg.chat_id_) then
@@ -11209,7 +11257,7 @@ if SecondSudo(msg) then
 if text == "تحديث السورس" and SourceCh(msg) or text == "تحديث سورس" and SourceCh(msg) or text == "↫ تحديث السورس ᥀" and SourceCh(msg) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙جاري تحديث سورس ديفد', 1, 'md') 
 os.execute('rm -rf David.lua') 
-os.execute('wget https://raw.githubusercontent.com/David-Team-Rio/David/master/David.lua') 
+os.execute('wget https://raw.githubusercontent.com/DavidTeam8/David/master/David.lua') 
 dofile('David.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
