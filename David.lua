@@ -5526,7 +5526,7 @@ local user = text:match('تنزيل منشئ اساسي (%d+)')
 DevRio:srem(David..'Rio:BasicConstructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","᥀︙تم تنزيله منشئ اساسي")  
 end end
-if text ==('رفع منشئ اساسي') and not RioConstructor(msg) then
+if text ==('رفع منشئ اساسي') and not Owner(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙هذا الامر للمالكين والمطورين فقط', 1, 'md')
 end
 --     Source David     --
